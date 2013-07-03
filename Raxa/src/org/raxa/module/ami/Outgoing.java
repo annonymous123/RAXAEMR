@@ -22,7 +22,7 @@ public class Outgoing implements VariableSetter
     
     public Outgoing(){
     	   ManagerConnectionFactory factory = new ManagerConnectionFactory(
-    			   ASTERISK_SERVER_URL, MANAGER_USERNAME, "MANAGER_PASSWORD");
+    			   ASTERISK_SERVER_URL, MANAGER_USERNAME, MANAGER_PASSWORD);
 
            this.managerConnection = factory.createManagerConnection();
            
