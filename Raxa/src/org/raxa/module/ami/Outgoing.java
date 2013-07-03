@@ -1,4 +1,4 @@
-/*Call Patient Number and set Extension to magId of the patient;
+/*Call Patient Number and set Extension to msgId of the patient;
  * 
  */
 package org.raxa.module.ami;
