@@ -33,7 +33,6 @@ public class EnglishTTS {
 	}
 	
 	public boolean convertToSpeech(List<String> stringToConvert,String folderLocation){
-	//	PropertyConfigurator.configure("log4j.properties");
 		try{
 			for(int i=0;i<stringToConvert.size();i++){
 				String string=stringToConvert.get(i);
