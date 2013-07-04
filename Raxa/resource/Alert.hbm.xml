@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 25 Jun, 2013 11:25:23 AM by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="org.raxa.module.database.Alert" table="alert">
+    <class name="org.raxa.module.database.Alert" table="alert" dynamic-update="true">
         <id name="aid" type="int" access="field">
             <column name="aid" />
             <generator class="native" />

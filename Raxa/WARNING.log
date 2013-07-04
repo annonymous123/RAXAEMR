@@ -115,3 +115,213 @@ java.net.BindException: Address already in use
 	at org.asteriskjava.fastagi.DefaultAgiServer.createServerSocket(DefaultAgiServer.java:261)
 	at org.asteriskjava.fastagi.DefaultAgiServer.startup(DefaultAgiServer.java:268)
 	at org.asteriskjava.fastagi.DefaultAgiServer.main(DefaultAgiServer.java:392)
+445  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+636  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+698  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+735  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+767  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+801  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+834  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+227  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+299  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+353  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+406  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+439  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+468  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+497  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+232  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+281  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+343  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+391  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+420  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+449  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+474  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+237  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+290  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+340  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+396  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+453  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+486  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+517  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+241  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+291  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+359  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+400  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+431  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+464  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+491  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+224  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+275  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+344  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+396  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+428  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+458  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+489  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+331  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+400  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+481  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+534  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+569  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+629  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+664  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+230  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+286  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+371  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+427  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+498  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+532  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+564  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+239  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+297  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+363  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+416  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+448  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+479  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+510  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+297  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+360  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+434  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+510  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+596  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+628  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+659  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+348  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+428  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+478  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+535  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+570  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+599  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+623  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+248  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+299  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+354  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+390  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+420  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+443  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+466  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+234  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+285  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+350  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+399  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+430  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+461  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+493  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+243  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+293  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+344  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+392  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+422  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+459  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+488  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+238  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+290  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+358  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+408  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+436  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+465  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+496  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+228  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+278  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+346  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+394  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+424  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+453  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+477  [main] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+13782 [Asterisk-Java DaemonPool-1-thread-1] ERROR org.asteriskjava.fastagi.internal.FastAgiConnectionHandler  - No script configured for URL 'agi://127.0.0.1/hello.agi?location=123' (script 'hello.agi')
+93888 [Asterisk-Java DaemonPool-1-thread-2] ERROR org.asteriskjava.fastagi.internal.FastAgiConnectionHandler  - No script configured for URL 'agi://127.0.0.1/hello.agi?location=sfds4' (script 'hello.agi')
+10888 [Asterisk-Java DaemonPool-1-thread-1] ERROR org.asteriskjava.fastagi.internal.FastAgiConnectionHandler  - No script configured for URL 'agi://127.0.0.1/hello.agi?location=1234' (script 'hello.agi')
+17   [main] ERROR org.asteriskjava.fastagi.DefaultAgiServer  - Unable start AgiServer: cannot to bind to *:4573.
+java.net.BindException: Address already in use
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:376)
+	at java.net.ServerSocket.bind(ServerSocket.java:376)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at org.asteriskjava.util.internal.ServerSocketFacadeImpl.<init>(ServerSocketFacadeImpl.java:42)
+	at org.asteriskjava.fastagi.DefaultAgiServer.createServerSocket(DefaultAgiServer.java:261)
+	at org.asteriskjava.fastagi.DefaultAgiServer.startup(DefaultAgiServer.java:268)
+	at org.asteriskjava.fastagi.DefaultAgiServer.main(DefaultAgiServer.java:392)
+16212 [Asterisk-Java DaemonPool-1-thread-1] ERROR org.asteriskjava.fastagi.internal.FastAgiConnectionHandler  - No script configured for URL 'agi://127.0.0.1/hello.agi?location=12344' (script 'hello.agi')
+18   [main] ERROR org.asteriskjava.fastagi.DefaultAgiServer  - Unable start AgiServer: cannot to bind to *:4573.
+java.net.BindException: Address already in use
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:376)
+	at java.net.ServerSocket.bind(ServerSocket.java:376)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at org.asteriskjava.util.internal.ServerSocketFacadeImpl.<init>(ServerSocketFacadeImpl.java:42)
+	at org.asteriskjava.fastagi.DefaultAgiServer.createServerSocket(DefaultAgiServer.java:261)
+	at org.asteriskjava.fastagi.DefaultAgiServer.startup(DefaultAgiServer.java:268)
+	at org.asteriskjava.fastagi.DefaultAgiServer.main(DefaultAgiServer.java:392)
+10121 [Asterisk-Java DaemonPool-1-thread-1] ERROR org.asteriskjava.fastagi.internal.FastAgiConnectionHandler  - No script configured for URL 'agi://127.0.0.1/hello.agi?location=1233' (script 'hello.agi')
+25235 [Asterisk-Java DaemonPool-1-thread-1] ERROR org.asteriskjava.fastagi.internal.FastAgiConnectionHandler  - No script configured for URL 'agi://127.0.0.1/hello.agi' (script 'hello.agi')
+9161 [Asterisk-Java DaemonPool-1-thread-1] ERROR org.asteriskjava.fastagi.internal.FastAgiConnectionHandler  - No script configured for URL 'agi://127.0.0.1/hello.agi' (script 'hello.agi')
+75533 [Asterisk-Java DaemonPool-1-thread-1] ERROR org.asteriskjava.fastagi.internal.FastAgiConnectionHandler  - No script configured for URL 'agi://127.0.0.1/hello.agi' (script 'hello.agi')
+21   [main] ERROR org.asteriskjava.fastagi.DefaultAgiServer  - Unable start AgiServer: cannot to bind to *:4573.
+java.net.BindException: Address already in use
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:376)
+	at java.net.ServerSocket.bind(ServerSocket.java:376)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at org.asteriskjava.util.internal.ServerSocketFacadeImpl.<init>(ServerSocketFacadeImpl.java:42)
+	at org.asteriskjava.fastagi.DefaultAgiServer.createServerSocket(DefaultAgiServer.java:261)
+	at org.asteriskjava.fastagi.DefaultAgiServer.startup(DefaultAgiServer.java:268)
+	at org.asteriskjava.fastagi.DefaultAgiServer.main(DefaultAgiServer.java:392)
+18   [main] ERROR org.asteriskjava.fastagi.DefaultAgiServer  - Unable start AgiServer: cannot to bind to *:4573.
+java.net.BindException: Address already in use
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:376)
+	at java.net.ServerSocket.bind(ServerSocket.java:376)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at org.asteriskjava.util.internal.ServerSocketFacadeImpl.<init>(ServerSocketFacadeImpl.java:42)
+	at org.asteriskjava.fastagi.DefaultAgiServer.createServerSocket(DefaultAgiServer.java:261)
+	at org.asteriskjava.fastagi.DefaultAgiServer.startup(DefaultAgiServer.java:268)
+	at org.asteriskjava.fastagi.DefaultAgiServer.main(DefaultAgiServer.java:392)
+18   [main] ERROR org.asteriskjava.fastagi.DefaultAgiServer  - Unable start AgiServer: cannot to bind to *:4573.
+java.net.BindException: Address already in use
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:376)
+	at java.net.ServerSocket.bind(ServerSocket.java:376)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at org.asteriskjava.util.internal.ServerSocketFacadeImpl.<init>(ServerSocketFacadeImpl.java:42)
+	at org.asteriskjava.fastagi.DefaultAgiServer.createServerSocket(DefaultAgiServer.java:261)
+	at org.asteriskjava.fastagi.DefaultAgiServer.startup(DefaultAgiServer.java:268)
+	at org.asteriskjava.fastagi.DefaultAgiServer.main(DefaultAgiServer.java:392)
+18   [main] ERROR org.asteriskjava.fastagi.DefaultAgiServer  - Unable start AgiServer: cannot to bind to *:4573.
+java.net.BindException: Address already in use
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:376)
+	at java.net.ServerSocket.bind(ServerSocket.java:376)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at org.asteriskjava.util.internal.ServerSocketFacadeImpl.<init>(ServerSocketFacadeImpl.java:42)
+	at org.asteriskjava.fastagi.DefaultAgiServer.createServerSocket(DefaultAgiServer.java:261)
+	at org.asteriskjava.fastagi.DefaultAgiServer.startup(DefaultAgiServer.java:268)
+	at org.asteriskjava.fastagi.DefaultAgiServer.main(DefaultAgiServer.java:392)
+233  [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+286  [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+350  [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+401  [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+429  [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+458  [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+483  [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+97887 [pool-2-thread-1] ERROR org.raxa.module.soundConverter.EnglishTTS  - Doing Work
+4207022 [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+4207080 [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+4207151 [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+4207187 [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+4207217 [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+4207239 [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+4207262 [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+235  [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+285  [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+336  [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+389  [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+420  [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+450  [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+480  [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+256  [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+317  [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+384  [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+436  [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+474  [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+504  [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+534  [pool-1-thread-1] WARN  org.hibernate.internal.util.xml.DTDEntityResolver  - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+111062 [pool-2-thread-2] ERROR org.raxa.module.soundConverter.EnglishTTS  - Doing Work

@@ -42,7 +42,7 @@ public class CallSetter implements Runnable,VariableSetter{
 	}
 	
 	public void setIVRThread(List<MedicineInformer> list){
-		PropertyConfigurator.configure("log4j.properties");
+		
 		ScheduledExecutorService executor = Executors.newScheduledThreadPool(THREAD_POOL_CALL_SETTER);
 		int count=0;
 		DateFormat df = new SimpleDateFormat("hh:mm:ss");

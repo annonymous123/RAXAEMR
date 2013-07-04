@@ -5,10 +5,10 @@
 package org.raxa.module.scheduler;
 import org.raxa.module.MedicalInformation.MedicineInformer;
 import org.raxa.module.soundConverter.EnglishTTS;
-import java.util.List;
 import java.io.File;
 import org.apache.log4j.Logger;
 import org.raxa.module.ami.Outgoing;
+import org.raxa.module.database.Alert;
 import org.raxa.module.database.HibernateUtil;
 import org.apache.log4j.PropertyConfigurator;
 import org.raxa.module.variables.VariableSetter;
@@ -32,7 +32,6 @@ public class Caller implements Runnable,VariableSetter,schedulerInterface {
 	
 	public void run(){
 		Logger logger = Logger.getLogger(Caller.class);
-		PropertyConfigurator.configure("log4j.properties");
 		String downloadLocation=patientDirectory+"/"+String.valueOf(msgId);
 		if(checkIfTheVoiceFolderExist(downloadLocation) || downloadVoice(downloadLocation)){
 			if(callManager(String.valueOf(msgId)))
@@ -62,26 +61,28 @@ public class Caller implements Runnable,VariableSetter,schedulerInterface {
 	}
 	
 	public boolean callManager(String msgId){
-		return (new Outgoing()).callPatient(patient.getPhoneNumber(),msgId);
+		return (new Outgoing()).callPatient(patient.getPhoneNumber(),msgId,patient.getMedicineInformation().size());
 	}
 	
 	public void updateRecordAndAlert(MedicineInformer patient,boolean isExecuted){
 		Timestamp time=new Timestamp(new Date().getTime());
 		Record record=new Record(patient.getPatientId(),IVR_TYPE,msgId,time,isExecuted,"UnKnown");
+		
 		String hqlAlert=ALERT_UPDATE;
 		 
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		session.beginTransaction();
 		 
 		Query query=session.createQuery(hqlAlert);
-		query.setBoolean("isExecuted", isExecuted);
-		query.setParameter("lastTry", (Object) time);   //DOUBT
 		query.setInteger("msgId", msgId);
-		query.setInteger("alertType",IVR_TYPE);
+		query.setInteger("alertType", IVR_TYPE);
+		Alert alert = (Alert)query.list().get(0);
+		alert.setIsExecuted(isExecuted);
+		alert.setLastTried(time);
+		session.update(alert);                        //Update Alert
 		 
-		session.getTransaction().commit();
-		 
-		int id = (Integer) session.save(record);
+		
+		int id = (Integer) session.save(record);      //insert Record
 	    record.setRecordId(id);
 	     
 	    session.getTransaction().commit();

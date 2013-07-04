@@ -15,7 +15,6 @@ public class Test {
 		  
 		  Session session = HibernateUtil.getSessionFactory().openSession();
 		 
-		   session.beginTransaction();
 /*
 		   	String hql="from Patient,";
 		   	Query query = session.createQuery(hql);
@@ -67,45 +66,33 @@ public class Test {
 			 uppertime.setMinutes(uppertime.getMinutes()+58);
 			 System.out.println(uppertime);
 			 System.out.println(lowertime);
-			 String pid="123";
-			 
+			 String pid="125";
+			 boolean isExecuted=true;
 			 java.sql.Timestamp a=new java.sql.Timestamp(date.getTime());
+			 int msgId=6;
+			 int alertType=1;
+			 Record record=new Record(pid,alertType,msgId,a,isExecuted,"UnKnown");
+			 String hqlAlert="from Alert where msgId=:msgId and alertType=:alertType";
+			 session.beginTransaction();
+				 
+				Query query=session.createQuery(hqlAlert);
+				query.setInteger("msgId", msgId);
+				query.setInteger("alertType", alertType);
+				
+				
+				 Alert alert = (Alert)query.list().get(0);
+				 
+				 alert.setIsExecuted(isExecuted);
+				 alert.setLastTried(a);
+				 session.update(alert);
+				 
+			       int id = (Integer) session.save(record);
+			       record.setRecordId(id);
+			     
+			    session.getTransaction().commit();
+			    session.close();
 			 
 			
-			 
-			/* 
-			// System.out.println("select p1.pnumber,i1.content,a1.scheduleTime from Patient p1,Alert a1,IvrMsg i1 where p1.pid=a1.pid and a1.alertType=1 and a1.scheduleTime>="+lowertime+"and a1.scheduleTime <="+uppertime+"and a1.msgId=i1.ivrIdz");
-			 String hql="select p1.pnumber,a1.scheduleTime,i1.content,i1.ivrId,a1.isExecuted from Patient p1,Alert a1,IvrMsg i1 where p1.pid=:pid and p1.pid=a1.pid and a1.alertType=1 and a1.msgId=i1.ivrId order by i1.id,i1.itemNumber";
-			 Query query=session.createQuery(hql);
-			
-			  query.setString("pid",pid);
-			try{
-			    Iterator results=query.list().iterator();
-			    List<String> content=new ArrayList<String>();
-			    Object[] row = (Object[]) results.next();
-			   	String pnumber = (String) row[0];
-			   	Time time=(Time) row[2];
-			   	String temp=(String) row[1];
-			   	content.add(temp);
-			   	System.out.println(temp);
-			   	while ( results.hasNext() ) {
-			   		row = (Object[]) results.next();
-			   		content.add((String)row[1]);
-			   		System.out.println((boolean)row[4]);
-			   	    
-			   	}
-				System.out.println(pnumber+" "+time);int count=0;
-			   	while(count<content.size()){
-			   
-			   		System.out.println(content.get(count++));
-			   	}
-			}
-			catch(Exception ex){
-				System.out.println("Some Error Occured");
-			}
-			*/
-			   	
-			 session.close();
 }
 	}
 

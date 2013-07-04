@@ -22,7 +22,7 @@ public class Outgoing implements VariableSetter
     
     public Outgoing(){
     	   ManagerConnectionFactory factory = new ManagerConnectionFactory(
-    			   ASTERISK_SERVER_URL, MANAGER_USERNAME, "MANAGER_PASSWORD");
+    			   ASTERISK_SERVER_URL, MANAGER_USERNAME, MANAGER_PASSWORD);
 
            this.managerConnection = factory.createManagerConnection();
            
@@ -46,11 +46,11 @@ public class Outgoing implements VariableSetter
     }
     		
     
-    public boolean callPatient(String pnumber,String msgId)
+    public boolean callPatient(String pnumber,String msgId,int totalFile)
     {	
     	Logger logger = Logger.getLogger(Outgoing.class);
     	pnumber="SIP/1000abc"; //will change to phonenumber once we have outgoing call facility.
-    	
+    	msgId=msgId+"a"+String.valueOf(totalFile);
     	try{
         OriginateAction originateAction=new OriginateAction();
         ManagerResponse originateResponse=new ManagerResponse();
@@ -81,6 +81,9 @@ public class Outgoing implements VariableSetter
     		logger.error("In org.raxa.module.ami.Outgoing.java:Some Error Occured");
     		return false;
     	}
+    	
     
     }
+    
+    
 }
