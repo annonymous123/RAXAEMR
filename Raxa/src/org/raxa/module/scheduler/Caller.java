@@ -114,11 +114,8 @@ public class Caller implements Runnable,VariableSetter,schedulerInterface {
 	     
 	    session.getTransaction().commit();
 	    session.close();
->>>>>>> 1ea08fb341a4627ba67e572d1c58ae2c8ae3118f
+
 	}
-	/*
-	 * This will set IsExecuted to false if the Patient didnot pick it up after the maxRetry
-	 * Thus if isExecuted is false in Record it means patient didnot picked it up.
-	 */
+	
 	
 }
