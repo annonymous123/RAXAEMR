@@ -76,6 +76,7 @@ public class Caller implements Runnable,VariableSetter,schedulerInterface {
 		return (new Outgoing()).callPatient(patient.getPhoneNumber(),msgId,patient.getMedicineInformation().size(),String.valueOf(patient.getAlertId()));
 	}
 	
+<<<<<<< HEAD
 	/*
 	 * This will increment the retry_Count after each call;
 	 */
@@ -89,6 +90,31 @@ public class Caller implements Runnable,VariableSetter,schedulerInterface {
 		session.update(alert);
 		session.getTransaction().commit();
 		session.close();
+=======
+	public void updateRecordAndAlert(MedicineInformer patient,boolean isExecuted){
+		Timestamp time=new Timestamp(new Date().getTime());
+		Record record=new Record(patient.getPatientId(),IVR_TYPE,msgId,time,isExecuted,"UnKnown");
+		
+		String hqlAlert=ALERT_UPDATE;
+		 
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		session.beginTransaction();
+		 
+		Query query=session.createQuery(hqlAlert);
+		query.setInteger("msgId", msgId);
+		query.setInteger("alertType", IVR_TYPE);
+		Alert alert = (Alert)query.list().get(0);
+		alert.setIsExecuted(isExecuted);
+		alert.setLastTried(time);
+		session.update(alert);                        //Update Alert
+		 
+		
+		int id = (Integer) session.save(record);      //insert Record
+	    record.setRecordId(id);
+	     
+	    session.getTransaction().commit();
+	    session.close();
+>>>>>>> 1ea08fb341a4627ba67e572d1c58ae2c8ae3118f
 	}
 	/*
 	 * This will set IsExecuted to false if the Patient didnot pick it up after the maxRetry

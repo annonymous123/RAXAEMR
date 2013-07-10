@@ -34,7 +34,10 @@ public class EnglishTTS {
 	
 	public boolean convertToSpeech(List<String> stringToConvert,String folderLocation){
 		try{
+<<<<<<< HEAD
 			logger.info("Downloading Voice File");
+=======
+>>>>>>> 1ea08fb341a4627ba67e572d1c58ae2c8ae3118f
 			for(int i=0;i<stringToConvert.size();i++){
 				String string=stringToConvert.get(i);
 				string=string.replace(' ', '+');
