@@ -7,54 +7,93 @@
 
 package org.raxa.module.scheduler;
 import org.raxa.module.variables.VariableSetter;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import java.sql.Time;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.Calendar;
 import java.util.List;
-import java.sql.Time;
+import org.raxa.module.database.*;
 import java.util.Date;
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
-
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.raxa.module.MedicalInformation.MedicineInformer;
+import java.io.IOException;
+import java.util.Properties;
 
 public class CallSetter implements Runnable,VariableSetter{
 	static Logger logger = Logger.getLogger(CallSetter.class);
+	private Date today;
+	
+	public CallSetter(Date today){
+		this.today=today;
+	}
 	
 	public void run(){
-		Time lowertime=new Time((new Date()).getTime());
+		if(!isSameDay()){
+			resetDatabase();
+			today=new Date();
+			System.out.println(today);
+		}
+		Time currtime=new Time((new Date()).getTime());
 		
-		List<MedicineInformer> listOfIVRCaller=(new MedicineInformer()).getPatientInfoOnTime(lowertime,IVR_TYPE);
-		List<MedicineInformer> listOfSMSCaller=(new MedicineInformer()).getPatientInfoOnTime(lowertime,SMS_TYPE);
+		List<MedicineInformer> listOfIVRCaller=(new MedicineInformer()).getPatientInfoOnTime(currtime,IVR_TYPE);
+		List<MedicineInformer> listOfSMSCaller=(new MedicineInformer()).getPatientInfoOnTime(currtime,SMS_TYPE);
 		
 		if(listOfIVRCaller!=null)
 			setIVRThread(listOfIVRCaller);
-		else logger.info("In CallSetter:run-No IVRTuple found for the next hour");
+		else logger.info("In CallSetter:run-No IVRTuple found for the next interval");
 		
 		if(listOfSMSCaller!=null)
 			setSMSThread(listOfSMSCaller);
 		else logger.info("In CallSetter:run-No SMSTuple found for the next interval");
 		
-		
-			
+	}
+	
+	public boolean isSameDay(){
+		Calendar cal1 = Calendar.getInstance();
+		Calendar cal2 = Calendar.getInstance();
+		cal1.setTime(today);
+		cal2.setTime(new Date());
+		boolean sameDay = cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR) &&
+		                  cal1.get(Calendar.MONTH) == cal2.get(Calendar.MONTH)&&
+		                  cal1.get(Calendar.DAY_OF_MONTH)==cal2.get(Calendar.DAY_OF_MONTH);
+		return sameDay;
+	}
+	
+	/*
+	 * Update the database and set isExecuted to no and retry_count to false each day(at midnight).
+	 */
+	public void resetDatabase(){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		  session.beginTransaction();
+		  String queryString = "update Alert a set a.retryCount=3,a.isExecuted='n'";
+		  Query query = session.createQuery(queryString);
+		  query.executeUpdate();
+		  session.getTransaction().commit();
+		  session.close();
 	}
 	
 	public void setIVRThread(List<MedicineInformer> list){
+		Properties prop = new Properties();
+		int THREAD_POOL_CALLER=50;
+		try{
+		prop.load(CallSetter.class.getClassLoader().getResourceAsStream("config.properties"));
+		THREAD_POOL_CALLER=Integer.parseInt(prop.getProperty("Thread_Pool_Caller"));
+		}
+		catch (IOException ex) {
+    		ex.printStackTrace();
+        }
 		
-		ScheduledExecutorService executor = Executors.newScheduledThreadPool(THREAD_POOL_CALL_SETTER);
+		ScheduledExecutorService executor = Executors.newScheduledThreadPool(THREAD_POOL_CALLER);
 		int count=0;
-		DateFormat df = new SimpleDateFormat("hh:mm:ss");
 	    while(count<list.size()){
 			MedicineInformer a;
 			a=list.get(count);
 			Caller caller=new Caller(a);
 			try{
-				Date preTime=df.parse(df.format(a.getTime()));
-				Date sysTime = df.parse(df.format(new Date()));
-			    long diff=preTime.getTime()-sysTime.getTime();
-				executor.schedule(caller,diff,TimeUnit.MILLISECONDS);
+				executor.schedule(caller,1,TimeUnit.SECONDS);
 			}
 			catch(Exception ex){
 				logger.error("In function setIVRThread:Error Occured");
@@ -66,21 +105,30 @@ public class CallSetter implements Runnable,VariableSetter{
 	}
 		
 	public void setSMSThread(List<MedicineInformer> list){
-		ScheduledExecutorService executor = Executors.newScheduledThreadPool(THREAD_POOL_CALL_SETTER);
+		Properties prop = new Properties();
+		int THREAD_POOL_MESSAGER=50;
+		try{
+		prop.load(CallSetter.class.getClassLoader().getResourceAsStream("config.properties"));
+		THREAD_POOL_MESSAGER=Integer.parseInt(prop.getProperty("Thread_Pool_Messager"));
+		}
+		catch (IOException ex) {
+    		ex.printStackTrace();
+        }
+		
+		ScheduledExecutorService executor = Executors.newScheduledThreadPool(THREAD_POOL_MESSAGER);
 		int count=0;
-		DateFormat df = new SimpleDateFormat("hh:mm:ss");
-		while(count<list.size()){
+	    while(count<list.size()){
 			MedicineInformer a;
 			a=list.get(count);
 			Messager messager=new Messager(a);
 			try{
-				Date preTime=df.parse(df.format(a.getTime()));
-				Date sysTime = df.parse(df.format(new Date()));
-			    long diff=preTime.getTime()-sysTime.getTime();
-				executor.schedule(messager,diff,TimeUnit.MILLISECONDS);
+				executor.schedule(messager,1,TimeUnit.SECONDS);
 			}
 			catch(Exception ex){
 				logger.error("In function setSMSThread:Error Occured");
+			}
+			finally{
+				count++;
 			}
 		}
 	}

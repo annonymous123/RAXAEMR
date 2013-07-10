@@ -17,7 +17,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.commons.io.FileUtils;
 import java.util.List;
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
+
 
 public class EnglishTTS {
 	private String URL;
@@ -33,9 +33,8 @@ public class EnglishTTS {
 	}
 	
 	public boolean convertToSpeech(List<String> stringToConvert,String folderLocation){
-	//	PropertyConfigurator.configure("log4j.properties");
 		try{
-			logger.error("Doing Work");
+			logger.info("Downloading Voice File");
 			for(int i=0;i<stringToConvert.size();i++){
 				String string=stringToConvert.get(i);
 				string=string.replace(' ', '+');

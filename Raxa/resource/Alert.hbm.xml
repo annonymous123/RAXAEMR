@@ -26,5 +26,8 @@
         <property name="isExecuted" type="org.hibernate.type.YesNoType">
             <column name="isExecuted" />
         </property>
+        <property name="retryCount" type="int" access="field">
+            <column name="retryCount" />
+        </property>
     </class>
 </hibernate-mapping>

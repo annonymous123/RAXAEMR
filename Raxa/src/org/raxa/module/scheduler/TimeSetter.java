@@ -10,18 +10,33 @@ package org.raxa.module.scheduler;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import org.raxa.module.variables.VariableSetter;
+import java.util.Date;
+import java.io.IOException;
+import java.util.Properties;
 
+public class TimeSetter{
 
-public class TimeSetter implements VariableSetter{
-
-	private static ScheduledExecutorService executor = Executors.newScheduledThreadPool(THREAD_POOL_TIME_SETTER);
+	 
 	public static void main(String args[]){
-		  Runnable callSetter = new CallSetter();
-		  try{
-		   executor.scheduleWithFixedDelay(callSetter,1,DATABASE_PINGING_INTERVAL*60,TimeUnit.SECONDS);
-		   }catch(Exception e){
+		Properties prop = new Properties();
+		int THREAD_POOL_DATABASE=1;int DATABASE_POLLING_INTERVAL=2;
+    	try {
+              
+    		prop.load(TimeSetter.class.getClassLoader().getResourceAsStream("config.properties"));
+    		THREAD_POOL_DATABASE=Integer.parseInt(prop.getProperty("Thread_Poll_Database"));
+    		DATABASE_POLLING_INTERVAL=Integer.parseInt(prop.getProperty("Database_Poll_Interval"));
+    	} 
+    	catch (IOException ex) {
+    		ex.printStackTrace();
+        }
+		
+    	ScheduledExecutorService executor = Executors.newScheduledThreadPool(THREAD_POOL_DATABASE);
+		Runnable callSetter = new CallSetter(new Date());
+		try{
+		executor.scheduleWithFixedDelay(callSetter,0,DATABASE_POLLING_INTERVAL,TimeUnit.SECONDS);
+		}
+		catch(Exception e){
 		   e.printStackTrace();
-		  }
+		 }
 	} 
 }

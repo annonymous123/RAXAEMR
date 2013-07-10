@@ -9,40 +9,41 @@
 
 package org.raxa.module.MedicalInformation;
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.raxa.module.database.HibernateUtil;
-import java.sql.Timestamp;
-import java.util.Date;
 import java.util.Iterator;
 import java.sql.Time;
 import java.util.List;
 import java.util.ArrayList;
+import org.raxa.module.scheduler.TimeSetter;
 import org.raxa.module.variables.*;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Properties;
+ 
 
 
 public class MedicineInformer implements VariableSetter,MedicineInformerConstant {
 	static Logger logger = Logger.getLogger(MedicineInformer.class);
 	private String pnumber;
-	private Time time;
 	private List<String> medicineInfo;
 	private String pid;
 	private int msgId;
+	private int aid;
 		
 	public MedicineInformer(){
 		pnumber=null;
-		time=null;
 		medicineInfo=null;
 	//	PropertyConfigurator.configure("log4j.properties");
 	}
 	
-	public MedicineInformer(String pnumber,Time time,List<String> medicineInfo,String pid,int msgId){
+	public MedicineInformer(String pnumber,List<String> medicineInfo,String pid,int msgId,int aid){
 		this.pnumber=pnumber;
-		this.time=time;
 		this.medicineInfo=medicineInfo;
 		this.pid=pid;
 		this.msgId=msgId;
+		this.aid=aid;
 	}
 	
 	public String getPhoneNumber(){
@@ -50,9 +51,8 @@ public class MedicineInformer implements VariableSetter,MedicineInformerConstant
 		return pnumber;
 	}
 	
-	public Time getTime(){
-		
-		return time;
+	public int getAlertId(){
+		return aid;
 	}
 	
 	public List<String> getMedicineInformation(){
@@ -91,6 +91,7 @@ public class MedicineInformer implements VariableSetter,MedicineInformerConstant
 				 logger.error("Error in getPatientListOnTime");
 				 return null;
 			 }
+			 session.getTransaction().commit();
 			 session.close();
 			
 			 return a;
@@ -119,6 +120,7 @@ public class MedicineInformer implements VariableSetter,MedicineInformerConstant
 				 logger.error("Error in getPatientListOnTime");
 				 return null;
 			 }
+			 session.getTransaction().commit();
 			 session.close();
 			
 			 return a;
@@ -128,7 +130,7 @@ public class MedicineInformer implements VariableSetter,MedicineInformerConstant
 	/*
 	 * 
 	 */
-	public List<MedicineInformer> getPatientInfoOnTime(Time lowertime,int alertType){
+	public List<MedicineInformer> getPatientInfoOnTime(Time time,int alertType){
 		String hql=null;Session session = HibernateUtil.getSessionFactory().openSession();
 		List<MedicineInformer> a=null;
 		if(alertType==IVR_TYPE)
@@ -136,24 +138,38 @@ public class MedicineInformer implements VariableSetter,MedicineInformerConstant
 		if(alertType==SMS_TYPE)
 			  hql=SMS_MEDICINE_QUERY_DATE;
 		
-		Time uppertime=new Time(lowertime.getTime());
-		
-		uppertime.setMinutes(uppertime.getMinutes()+DATABASE_PINGING_INTERVAL+ACOUNT_DELAY); 
 		 try{
 		 session.beginTransaction();
 		 Query query=session.createQuery(hql);
-		 query.setTime("lowerTime",lowertime);
-		 query.setTime("upperTime", uppertime);
+		 query.setTime("systemTime",time);
+		 query.setBoolean("isExecuted",false);
+		 query.setInteger("alertType",IVR_TYPE);
+		 query.setInteger("retryCount",getMaxRetry());
 		 Iterator results=query.list().iterator();
 		 a=getPatientList(results);
 		 }
 		 catch(Exception ex){
 			 logger.error("Error in getPatientListOnTime");
+			 ex.printStackTrace();
 			 return null;
 		 }
+		 session.getTransaction().commit();
 		 session.close();
 		
 		 return a;
+	}
+	
+	public int getMaxRetry(){
+		Properties prop = new Properties();int MAX_TRY=3;
+		try{
+		prop.load(MedicineInformer.class.getClassLoader().getResourceAsStream("config.properties"));
+		MAX_TRY=Integer.parseInt(prop.getProperty("Max_Retry"));
+		return MAX_TRY;
+		}
+		catch (IOException ex) {
+    		ex.printStackTrace();
+    		return MAX_TRY;
+        }
 	}
 	
 	/*
@@ -164,49 +180,40 @@ public class MedicineInformer implements VariableSetter,MedicineInformerConstant
 	
 	public List<MedicineInformer> getPatientList(Iterator results){
 		
-		int flag=0;Date date=new Date();int today=date.getDay();
-		
+		int flag=0;
 		List<MedicineInformer> listOfPatients=new ArrayList<MedicineInformer>();
 		if(!(results.hasNext()))
 			return null;
+		
 		try{
-	    	
-		  Object[] row=(Object[]) results.next();
-		  while(true){
-			  
-			  while(today==((Timestamp)row[5]).getDate() && (boolean)row[6]){
-				  if(results.hasNext())
-					  row=(Object[]) results.next();
-				  else
-					  return listOfPatients;
-				  
-			  }
-			  String pnumber=(String) row[0];
-			  Time scheduleTime=(Time) row[1];
-			  String pid=(String) row[4];
-			  int id=(Integer) row[3];
-			  List<String> content=new ArrayList<String>();
-			  while(id==(Integer)row[3]){
-				  String temp=(String) row[2];
-			 	  content.add(temp);
-				  if(results.hasNext())
-				  row=(Object[]) results.next();
-				  else{ flag=1;	break;}						
-			  }
-			//Creating Object
-			 
-			 listOfPatients.add(new MedicineInformer(pnumber,scheduleTime,content,pid,id));
-			 
-			
-     		 if(flag==1) break;
+		Object[] row=(Object[]) results.next();
+		
+		while(true){
+		  String pnumber=(String) row[0];
+		  String pid=(String) row[3];
+		  int id=(Integer) row[2];
+		  int aid=(Integer) row[4];
+		  List<String> content=new ArrayList<String>();
+		
+		  while(aid==(Integer)row[4]){
+			  String temp=(String) row[1];
+		 	  content.add(temp);
+			  if(results.hasNext())
+			  row=(Object[]) results.next();
+			  else{ flag=1;	break;}						
 		  }
-	    }
+		  
+		  listOfPatients.add(new MedicineInformer(pnumber,content,pid,id,aid));
+		  		if(flag==1) break;
+		 }
+		
+		}
 		
 	    catch(Exception ex){
 			 logger.error("IN MedicineInformer:getPatientListOnTime:Error Occured");
 			 return null;
 		}
-//		session.close();
+		
 		return listOfPatients;
 	}
 	

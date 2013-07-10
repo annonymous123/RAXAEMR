@@ -10,17 +10,22 @@ import org.asteriskjava.manager.TimeoutException;
 import org.asteriskjava.manager.action.OriginateAction;
 import org.asteriskjava.manager.response.ManagerResponse;
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
-import org.raxa.module.variables.VariableSetter;
+import org.raxa.module.scheduler.TimeSetter;
+import java.util.Properties;
 
-public class Outgoing implements VariableSetter
-{
+public class Outgoing{
+	
     private ManagerConnection managerConnection;
     private String context;
     private String callerId;
     private Long timeOut;
+    private String ASTERISK_SERVER_URL;
+    private String MANAGER_USERNAME;
+    private String MANAGER_PASSWORD;
     
     public Outgoing(){
+    	   setProperties();
+    	   
     	   ManagerConnectionFactory factory = new ManagerConnectionFactory(
     			   ASTERISK_SERVER_URL, MANAGER_USERNAME, MANAGER_PASSWORD);
 
@@ -33,6 +38,24 @@ public class Outgoing implements VariableSetter
            timeOut=30000L;
     }
     
+    public void setProperties(){
+    	Properties prop = new Properties();
+ 	    ASTERISK_SERVER_URL="127.0.0.1";
+ 	    MANAGER_USERNAME="manager";
+ 	    MANAGER_PASSWORD="squirrel";
+ 	   try {
+            
+    		prop.load(TimeSetter.class.getClassLoader().getResourceAsStream("config.properties"));
+    		ASTERISK_SERVER_URL=prop.getProperty("Asterisk_URL");
+    		MANAGER_USERNAME=prop.getProperty("Manager_Username");
+    		MANAGER_PASSWORD=prop.getProperty("Manager_Password");
+    	   } 
+    	catch (IOException ex) {
+    		ex.printStackTrace();
+        }
+    }
+    
+    
     public void setContext(String s){
     	context=s;
     }
@@ -41,16 +64,16 @@ public class Outgoing implements VariableSetter
     	callerId=s;
     }
     
-    public void gettimeout(Long l){
+    public void setTimeout(Long l){
     	timeOut=l;
     }
     		
     
-    public boolean callPatient(String pnumber,String msgId,int totalFile)
+    public boolean callPatient(String pnumber,String msgId,int totalFile,String aid)
     {	
     	Logger logger = Logger.getLogger(Outgoing.class);
     	pnumber="SIP/1000abc"; //will change to phonenumber once we have outgoing call facility.
-    	msgId=msgId+"a"+String.valueOf(totalFile);
+    	msgId=msgId+"a"+String.valueOf(totalFile)+"a"+aid;
     	try{
         OriginateAction originateAction=new OriginateAction();
         ManagerResponse originateResponse=new ManagerResponse();

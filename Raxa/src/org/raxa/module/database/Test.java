@@ -4,8 +4,10 @@ import org.hibernate.Session;
 import java.util.Date;
 import java.util.Iterator;
 import java.sql.Time;
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.ArrayList;
+import org.raxa.module.MedicalInformation.*;
 
 
 public class Test {
@@ -58,7 +60,7 @@ public class Test {
 
 		    */
 		   
-		   java.util.Date date = new Date();
+		/*   java.util.Date date = new Date();
 			Time lowertime=new Time(date.getTime());
 			lowertime.setHours(lowertime.getHours()-16);
 			 System.out.println(lowertime);
@@ -91,7 +93,88 @@ public class Test {
 			     
 			    session.getTransaction().commit();
 			    session.close();
-			 
+		*/
+		 /*
+		  List<MedicineInformer> listOfPatients=new ArrayList<MedicineInformer>();
+		  session.beginTransaction();
+		  String hql="select p1.pnumber,i1.content,i1.ivrId,p1.pid,a1.aid from Patient p1,Alert a1,IvrMsg i1 where p1.pid=a1.pid and a1.alertType=:alertType and a1.msgId=i1.ivrId and a1.scheduleTime<=:systemTime and a1.isExecuted=:isExecuted and a1.retryCount<:retryCount order by i1.id,i1.itemNumber";
+		  Time lowertime=new Time(new Date().getTime());
+		  Query query=session.createQuery(hql);
+		  query.setInteger("alertType", 1);
+		  query.setBoolean("isExecuted",false);
+		  query.setTime("systemTime",lowertime);
+		  query.setInteger("retryCount",3);
+		  
+		  System.out.println(query.list().size());
+		  Iterator results=query.list().iterator();
+		  if(!(results.hasNext()))
+				return ;
+		  
+		  Object[] row=(Object[]) results.next();
+		  int flag=0;
+		 while(true){
+			  String pnumber=(String) row[0];
+			  String pid=(String) row[3];
+			  int id=(Integer) row[2];
+			  int aid=(Integer) row[4];
+			  List<String> content=new ArrayList<String>();
+			  while(aid==(Integer)row[4]){
+				  String temp=(String) row[1];
+			 	  content.add(temp);
+				  if(results.hasNext())
+				  row=(Object[]) results.next();
+				  else{ flag=1;	break;}						
+			  }
+			  listOfPatients.add(new MedicineInformer(pnumber,content,pid,id,aid));
+			if(flag==1) break;
+			  
+		 }
+		 
+		 int count=0;
+			System.out.println(listOfPatients.size());
+			while(count<listOfPatients.size()){
+				MedicineInformer a=listOfPatients.get(count++);
+				int count2=0;
+				System.out.println(a.getPhoneNumber()+" "+" " +a.getMsgId()+" "+a.getPatientId()+" "+a.getAlertId());
+				List<String> b=a.getMedicineInformation();
+					while(count2<b.size()){
+						System.out.println(b.get(count2));
+						count2++;
+					}
+				System.out.println("**************************************");
+			}
+			*/
+		  /*
+		  session.beginTransaction();
+		  String queryString = "update Alert a set a.retryCount=3,a.isExecuted=:a where aid=:aid";
+		  Query query = session.createQuery(queryString);
+		  query.setBoolean("a", true);
+		  query.setInteger("aid", 17);
+		  query.executeUpdate();
+		  session.getTransaction().commit();
+		  session.close();
+		  */
+		  /*
+		  	Timestamp time=new Timestamp(new Date().getTime());
+			Session session = HibernateUtil.getSessionFactory().openSession();
+		  	session.beginTransaction();
+			Alert alert = (Alert) session.get(Alert.class,16);
+			Record record=new Record(alert.getPatientId(),1,3,time,true,"UnKnown");
+			int id = (Integer) session.save(record);    
+		    record.setRecordId(id);
+		    session.getTransaction().commit();
+			session.close();
+		*/
+		/*
+			session.beginTransaction();
+			Alert alert = (Alert) session.get(Alert.class,20 );
+			int retryCount=alert.getretryCount()+1;
+			alert.setretryCount(retryCount);
+			session.update(alert);
+			session.getTransaction().commit();
+			session.close();
+		*/
+
 			
 }
 	}

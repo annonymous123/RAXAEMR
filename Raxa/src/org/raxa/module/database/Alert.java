@@ -18,6 +18,8 @@ public class Alert {
      
      private boolean isExecuted;
      
+     private int retryCount;
+     
      public Alert(String pid,int alertType,int msgId,Time scheduleTime,Timestamp lastTry){
     	 this.pid=pid;
     	 this.msgId=msgId;
@@ -55,7 +57,7 @@ public class Alert {
     	 msgId=id;
      }
      
-     public int getMessageId(int id){
+     public int getMessageId(){
     	 return msgId;
      }
      
@@ -82,6 +84,14 @@ public class Alert {
      
      public void setIsExecuted(boolean  status){
     	 isExecuted=status;
+     }
+     
+     public void setretryCount(int count){
+    	 retryCount=count;
+     }
+     
+     public int getretryCount(){
+    	 return retryCount;
      }
      
      
