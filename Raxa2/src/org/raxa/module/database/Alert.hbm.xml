@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 29 Jun, 2013 2:15:40 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="org.raxa.module.database.Alert" table="ALERT">
+        <id name="aid" type="int" access="field">
+            <column name="AID" />
+            <generator class="assigned" />
+        </id>
+        <property name="pid" type="java.lang.String" access="field">
+            <column name="PID" />
+        </property>
+        <property name="alertType" type="int">
+            <column name="ALERTTYPE" />
+        </property>
+        <property name="msgId" type="int" access="field">
+            <column name="MSGID" />
+        </property>
+        <property name="scheduleTime" type="java.sql.Time">
+            <column name="SCHEDULETIME" />
+        </property>
+        <property name="lastTry" type="java.sql.Timestamp" access="field">
+            <column name="LASTTRY" />
+        </property>
+        <property name="isExecuted" type="boolean">
+            <column name="ISEXECUTED" />
+        </property>
+    </class>
+</hibernate-mapping>
