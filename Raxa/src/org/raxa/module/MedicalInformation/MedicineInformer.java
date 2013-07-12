@@ -16,9 +16,7 @@ import java.util.Iterator;
 import java.sql.Time;
 import java.util.List;
 import java.util.ArrayList;
-import org.raxa.module.scheduler.TimeSetter;
 import org.raxa.module.variables.*;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
  
@@ -35,7 +33,6 @@ public class MedicineInformer implements VariableSetter,MedicineInformerConstant
 	public MedicineInformer(){
 		pnumber=null;
 		medicineInfo=null;
-	//	PropertyConfigurator.configure("log4j.properties");
 	}
 	
 	public MedicineInformer(String pnumber,List<String> medicineInfo,String pid,int msgId,int aid){
@@ -160,7 +157,8 @@ public class MedicineInformer implements VariableSetter,MedicineInformerConstant
 	}
 	
 	public int getMaxRetry(){
-		Properties prop = new Properties();int MAX_TRY=3;
+		Properties prop = new Properties();
+		int MAX_TRY=1;						//initialising;if try fails.
 		try{
 		prop.load(MedicineInformer.class.getClassLoader().getResourceAsStream("config.properties"));
 		MAX_TRY=Integer.parseInt(prop.getProperty("Max_Retry"));

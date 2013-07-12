@@ -4,6 +4,7 @@
 package org.raxa.module.scheduler;
 import org.raxa.module.MedicalInformation.MedicineInformer;
 import java.util.List;
+import org.apache.log4j.Logger;
 
 public class Messager implements Runnable {
 
@@ -14,12 +15,13 @@ public class Messager implements Runnable {
 	}
 	
 	public void run(){
-		System.out.println(patient.getMsgId()+" "+patient.getPatientId()+" "+patient.getPhoneNumber());
+		Logger logger = Logger.getLogger(Caller.class);
+		logger.debug(patient.getMsgId()+" "+patient.getPatientId()+" "+patient.getPhoneNumber());
 		int count=0;
 		List<String> a=patient.getMedicineInformation();
 		while(true){
 			if (a.isEmpty()) break;
-			System.out.println((a.get(count++)));
+			logger.debug((a.get(count++)));
 		}
 	}
 }

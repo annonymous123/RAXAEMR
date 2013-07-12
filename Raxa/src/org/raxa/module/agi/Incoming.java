@@ -1,7 +1,7 @@
 package org.raxa.module.agi;
 import java.io.IOException;
 import java.util.Properties;
-
+import org.apache.log4j.Logger;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.asteriskjava.fastagi.AgiException;
 import org.asteriskjava.fastagi.AgiRequest;
@@ -15,12 +15,14 @@ public class Incoming extends BaseAgiScript implements VariableSetter
 	private AgiRequest request;
 	private AgiChannel channel;
 	private String VOICE_FILE_LOCATION;
+	private Logger logger = Logger.getLogger(CallSuccess.class);
 	
 	public Incoming(){
 		setVoiceFileLocation();
 	}
 	
 	public void setVoiceFileLocation(){
+		VOICE_FILE_LOCATION=null;
 		Properties prop = new Properties();
 		try{
 		prop.load(Caller.class.getClassLoader().getResourceAsStream("config.properties"));
@@ -28,7 +30,7 @@ public class Incoming extends BaseAgiScript implements VariableSetter
 		}
 		catch (IOException ex) {
     		ex.printStackTrace();
-    		VOICE_FILE_LOCATION="/home/Desktop/PatientVoice";
+    		logger.error("Some error in getting voice file from Voice File Location");
         }
 	}
 	
@@ -47,26 +49,26 @@ public class Incoming extends BaseAgiScript implements VariableSetter
         
     }
     
-    void handleIncomingCall(){
+    void handleIncomingCall(){      //will be implemneted once succesfully updated the database.
     	//request.get
     }
    
     void provideMedicalInfo(){
+    		String serviceInfo="unknown";   //Doubt
+			String[] extension;
+			extension=(request.getExtension()).split("a");   //"a" was used as a joing between string in org.raxa.module.ami.Outgoing.java
+			int aid=Integer.parseInt(extension[2]);
+			int msgId=Integer.parseInt(extension[0]);
     		try{
-    			String[] extension;
-    			extension=(request.getExtension()).split("a");   //"a" was used as a joing between string in org.raxa.module.ami.Outgoing.java
-    			int aid=Integer.parseInt(extension[2]);
-    			int msgId=Integer.parseInt(extension[0]);
-    			for(int i=1;i<=Integer.parseInt(extension[1]);i++){
-    				channel.streamFile(VOICE_FILE_LOCATION+"/"+msgId+"/"+i);
-    				System.out.println(i);
-    			}
-    			CallSuccess update=new CallSuccess(msgId,aid);
+				for(int i=1;i<=Integer.parseInt(extension[1]);i++){
+				channel.streamFile(VOICE_FILE_LOCATION+"/"+msgId+"/"+i);
+				}
+    			CallSuccess update=new CallSuccess(msgId,aid,true,serviceInfo);
     			update.updateAlert();
     			update.updateRecord();
     		}
         	catch(Exception ex){
-        		System.out.println("Some Error Occured in provideMeadical Info");
+        		logger.error("Some Error Occured while playing voice file of msgId "+msgId);
         	}
      }
 }

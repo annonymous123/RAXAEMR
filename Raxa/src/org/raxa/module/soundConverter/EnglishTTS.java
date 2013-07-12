@@ -25,7 +25,9 @@ public class EnglishTTS {
 	private String queryPostfix;
 	private String query;
 	static Logger logger = Logger.getLogger(EnglishTTS.class);
-	
+	/*
+	 * Now using http://tts-api.com.The code may have to change entirely if TTS is changed.
+	 */
 	public EnglishTTS(){
 		URL="http://tts-api.com/tts.mp3";
 		queryPrefix="?q=";
@@ -34,10 +36,7 @@ public class EnglishTTS {
 	
 	public boolean convertToSpeech(List<String> stringToConvert,String folderLocation){
 		try{
-<<<<<<< HEAD
 			logger.info("Downloading Voice File");
-=======
->>>>>>> 1ea08fb341a4627ba67e572d1c58ae2c8ae3118f
 			for(int i=0;i<stringToConvert.size();i++){
 				String string=stringToConvert.get(i);
 				string=string.replace(' ', '+');

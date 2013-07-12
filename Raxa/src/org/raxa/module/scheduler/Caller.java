@@ -11,12 +11,8 @@ import org.apache.log4j.Logger;
 import org.raxa.module.ami.Outgoing;
 import org.raxa.module.database.Alert;
 import org.raxa.module.database.HibernateUtil;
-import org.raxa.module.database.Record;
 import org.raxa.module.variables.VariableSetter;
 import org.hibernate.Session;
-
-import java.sql.Timestamp;
-import java.util.Date;
 import java.util.Properties;
 
 public class Caller implements Runnable,VariableSetter,schedulerInterface {
@@ -32,6 +28,7 @@ public class Caller implements Runnable,VariableSetter,schedulerInterface {
 	}
 	
 	public void setParentDirectory(){
+		Logger logger = Logger.getLogger(Caller.class);
 		Properties prop = new Properties();
 		try{
 		prop.load(Caller.class.getClassLoader().getResourceAsStream("config.properties"));
@@ -39,7 +36,7 @@ public class Caller implements Runnable,VariableSetter,schedulerInterface {
 		}
 		catch (IOException ex) {
     		ex.printStackTrace();
-    		patientDirectory="/home/Desktop/PatientVoice";
+    		logger.error("Unable to Set Parent Directory");
         }
 	}
 	
@@ -76,7 +73,6 @@ public class Caller implements Runnable,VariableSetter,schedulerInterface {
 		return (new Outgoing()).callPatient(patient.getPhoneNumber(),msgId,patient.getMedicineInformation().size(),String.valueOf(patient.getAlertId()));
 	}
 	
-<<<<<<< HEAD
 	/*
 	 * This will increment the retry_Count after each call;
 	 */
@@ -90,31 +86,6 @@ public class Caller implements Runnable,VariableSetter,schedulerInterface {
 		session.update(alert);
 		session.getTransaction().commit();
 		session.close();
-=======
-	public void updateRecordAndAlert(MedicineInformer patient,boolean isExecuted){
-		Timestamp time=new Timestamp(new Date().getTime());
-		Record record=new Record(patient.getPatientId(),IVR_TYPE,msgId,time,isExecuted,"UnKnown");
-		
-		String hqlAlert=ALERT_UPDATE;
-		 
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		session.beginTransaction();
-		 
-		Query query=session.createQuery(hqlAlert);
-		query.setInteger("msgId", msgId);
-		query.setInteger("alertType", IVR_TYPE);
-		Alert alert = (Alert)query.list().get(0);
-		alert.setIsExecuted(isExecuted);
-		alert.setLastTried(time);
-		session.update(alert);                        //Update Alert
-		 
-		
-		int id = (Integer) session.save(record);      //insert Record
-	    record.setRecordId(id);
-	     
-	    session.getTransaction().commit();
-	    session.close();
-
 	}
 	
 	

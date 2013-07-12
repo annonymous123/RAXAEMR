@@ -1,4 +1,4 @@
-/*Call Patient Number and set Extension to msgId of the patient;
+/*Call Patient Number and set Extension to magId of the patient;
  * 
  */
 package org.raxa.module.ami;
@@ -13,12 +13,13 @@ import org.apache.log4j.Logger;
 import org.raxa.module.scheduler.TimeSetter;
 import java.util.Properties;
 
+
 public class Outgoing{
 	
     private ManagerConnection managerConnection;
-    private String context;
-    private String callerId;
-    private Long timeOut;
+    private String CONTEXT;
+    private String CALLERID;
+    private Long TIMEOUT;
     private String ASTERISK_SERVER_URL;
     private String MANAGER_USERNAME;
     private String MANAGER_PASSWORD;
@@ -31,41 +32,46 @@ public class Outgoing{
 
            this.managerConnection = factory.createManagerConnection();
            
-           context="outgoing-call";
-           
-           callerId="Take Medicine";
-           
-           timeOut=30000L;
     }
     
     public void setProperties(){
+    	Logger logger = Logger.getLogger(Outgoing.class);
     	Properties prop = new Properties();
- 	    ASTERISK_SERVER_URL="127.0.0.1";
- 	    MANAGER_USERNAME="manager";
- 	    MANAGER_PASSWORD="squirrel";
+    	//initialising
+ 	    ASTERISK_SERVER_URL=null;
+ 	    MANAGER_USERNAME=null;
+ 	    MANAGER_PASSWORD=null;
+ 	    CONTEXT=null;
+ 	    CALLERID=null;
+ 	    TIMEOUT=null;
+ 	    
  	   try {
             
     		prop.load(TimeSetter.class.getClassLoader().getResourceAsStream("config.properties"));
     		ASTERISK_SERVER_URL=prop.getProperty("Asterisk_URL");
     		MANAGER_USERNAME=prop.getProperty("Manager_Username");
     		MANAGER_PASSWORD=prop.getProperty("Manager_Password");
+    		CONTEXT=prop.getProperty("MedRemind_Context");
+     	    CALLERID=prop.getProperty("MedRemind_CallerId");
+     	    TIMEOUT=Long.parseLong(prop.getProperty("MedRemind_TimeOut"),10);
     	   } 
     	catch (IOException ex) {
     		ex.printStackTrace();
+    		logger.error("Some error occur while retreiving information from config.properties.Unable to forward call to asterisk");
         }
     }
     
     
     public void setContext(String s){
-    	context=s;
+    	CONTEXT=s;
     }
     
     public void setCallerId(String s){
-    	callerId=s;
+    	CALLERID=s;
     }
     
     public void setTimeout(Long l){
-    	timeOut=l;
+    	TIMEOUT=l;
     }
     		
     
@@ -79,12 +85,12 @@ public class Outgoing{
         ManagerResponse originateResponse=new ManagerResponse();
         managerConnection.login();
         originateAction = new OriginateAction();
-        originateAction.setCallerId(callerId);
+        originateAction.setCallerId(CALLERID);
         originateAction.setChannel(pnumber);
-        originateAction.setContext(context);
+        originateAction.setContext(CONTEXT);
         originateAction.setExten(msgId);
         originateAction.setPriority(new Integer(1));
-        originateAction.setTimeout(timeOut);
+        originateAction.setTimeout(TIMEOUT);
         originateAction.setAsync(true);
         originateResponse = managerConnection.sendAction(originateAction,10000);
         logger.info(originateResponse.getResponse());
