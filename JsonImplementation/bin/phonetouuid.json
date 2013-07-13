@@ -1,0 +1,232 @@
+{
+    "results": [
+        {
+            "uuid": "760aa2d7-2084-4fa5-a46e-5225bc1b1eb8",
+            "display": "NEW98608 - James Madison",
+            "identifiers": [
+                {
+                    "display": "RaxaEMR Identifier Number = NEW98608",
+                    "uuid": "8267f543-a1a4-4853-bfe1-08afda3c8d62",
+                    "identifier": "NEW98608",
+                    "identifierType": {
+                        "uuid": "9addc8c2-ef22-4622-b410-1e88a59b455b",
+                        "display": "RaxaEMR Identifier Number - Id no for Raxa EMR",
+                        "links": [
+                            {
+                                "uri": "NEED-TO-CONFIGURE/ws/rest/v1/patientidentifiertype/9addc8c2-ef22-4622-b410-1e88a59b455b",
+                                "rel": "self"
+                            }
+                        ]
+                    },
+                    "location": {
+                        "uuid": "6bbcc6a1-f8c3-4369-95af-712131d0d3ef",
+                        "display": "madanclinic - ",
+                        "links": [
+                            {
+                                "uri": "NEED-TO-CONFIGURE/ws/rest/v1/location/6bbcc6a1-f8c3-4369-95af-712131d0d3ef",
+                                "rel": "self"
+                            }
+                        ]
+                    },
+                    "preferred": true,
+                    "voided": false,
+                    "links": [
+                        {
+                            "uri": "NEED-TO-CONFIGURE/ws/rest/v1/patient/760aa2d7-2084-4fa5-a46e-5225bc1b1eb8/identifier/8267f543-a1a4-4853-bfe1-08afda3c8d62",
+                            "rel": "self"
+                        },
+                        {
+                            "uri": "NEED-TO-CONFIGURE/ws/rest/v1/patient/760aa2d7-2084-4fa5-a46e-5225bc1b1eb8/identifier/8267f543-a1a4-4853-bfe1-08afda3c8d62?v=full",
+                            "rel": "full"
+                        }
+                    ],
+                    "resourceVersion": "1.8"
+                }
+            ],
+            "person": {
+                "uuid": "760aa2d7-2084-4fa5-a46e-5225bc1b1eb8",
+		"display": "James Madison",
+                "gender": "M",
+                "age": 23,
+                "birthdate": "1990-01-01T00:00:00.000+0000",
+                "birthdateEstimated": true,
+                "dead": false,
+                "deathDate": null,
+                "causeOfDeath": null,
+                "preferredName": {
+                    "display": "James Madison",
+                    "uuid": "33ef4461-b4eb-41df-b385-6f1d5a1b2895",
+                    "givenName": "James",
+                    "middleName": null,
+                    "familyName": "Madison",
+                    "familyName2": null,
+                    "voided": false,
+                    "links": [
+                        {
+                            "uri": "NEED-TO-CONFIGURE/ws/rest/v1/person/760aa2d7-2084-4fa5-a46e-5225bc1b1eb8/name/33ef4461-b4eb-41df-b385-6f1d5a1b2895",
+                            "rel": "self"
+                        },
+                        {
+                            "uri": "NEED-TO-CONFIGURE/ws/rest/v1/person/760aa2d7-2084-4fa5-a46e-5225bc1b1eb8/name/33ef4461-b4eb-41df-b385-6f1d5a1b2895?v=full",
+                            "rel": "full"
+                        }
+                    ],
+                    "resourceVersion": "1.8"
+                },
+                "preferredAddress": null,
+                "names": [
+                    {
+                        "display": "James Madison",
+                        "uuid": "33ef4461-b4eb-41df-b385-6f1d5a1b2895",
+                        "givenName": "James",
+                        "middleName": null,
+                        "familyName": "Madison",
+                        "familyName2": null,
+                        "voided": false,
+                        "links": [
+                            {
+                                "uri": "NEED-TO-CONFIGURE/ws/rest/v1/person/760aa2d7-2084-4fa5-a46e-5225bc1b1eb8/name/33ef4461-b4eb-41df-b385-6f1d5a1b2895",
+                                "rel": "self"
+                            },
+                            {
+                                "uri": "NEED-TO-CONFIGURE/ws/rest/v1/person/760aa2d7-2084-4fa5-a46e-5225bc1b1eb8/name/33ef4461-b4eb-41df-b385-6f1d5a1b2895?v=full",
+                                "rel": "full"
+                            }
+                        ],
+                        "resourceVersion": "1.8"
+                    }
+                ],
+                "addresses": [],
+                "attributes": [
+                    {
+                        "display": "Health Center = 8",
+                        "uuid": "552185e7-0a9d-4228-aebe-bcea8c657290",
+                        "value": "8",
+                        "attributeType": {
+                            "uuid": "8d87236c-c2cc-11de-8d13-0010c6dffd0f",
+                            "display": "Health Center - Specific Location of this person's home health center.",
+                            "links": [
+                                {
+                                    "uri": "NEED-TO-CONFIGURE/ws/rest/v1/personattributetype/8d87236c-c2cc-11de-8d13-0010c6dffd0f",
+                                    "rel": "self"
+                                }
+                            ]
+                        },
+                        "voided": false,
+                        "links": [
+                            {
+                                "uri": "NEED-TO-CONFIGURE/ws/rest/v1/person/760aa2d7-2084-4fa5-a46e-5225bc1b1eb8/attribute/552185e7-0a9d-4228-aebe-bcea8c657290",
+                                "rel": "self"
+                            },
+                            {
+                                "uri": "NEED-TO-CONFIGURE/ws/rest/v1/person/760aa2d7-2084-4fa5-a46e-5225bc1b1eb8/attribute/552185e7-0a9d-4228-aebe-bcea8c657290?v=full",
+                                "rel": "full"
+                            }
+                        ],
+                        "resourceVersion": "1.8"
+                    },
+                    {
+                        "display": "Primary Contact = 9818139891",
+                        "uuid": "0fac6493-7d53-4f93-bdcb-2353d93e06d3",
+                        "value": "9818139891",
+                        "attributeType": {
+                            "uuid": "raxa00000-0000-0000-0000-000000000010",
+                            "display": "Primary Contact - Primary Contact",
+                            "links": [
+                                {
+                                    "uri": "NEED-TO-CONFIGURE/ws/rest/v1/personattributetype/raxa00000-0000-0000-0000-000000000010",
+                                    "rel": "self"
+                                }
+                            ]
+                        },
+                        "voided": false,
+                        "links": [
+                            {
+                                "uri": "NEED-TO-CONFIGURE/ws/rest/v1/person/760aa2d7-2084-4fa5-a46e-5225bc1b1eb8/attribute/0fac6493-7d53-4f93-bdcb-2353d93e06d3",
+                                "rel": "self"
+                            },
+                            {
+                                "uri": "NEED-TO-CONFIGURE/ws/rest/v1/person/760aa2d7-2084-4fa5-a46e-5225bc1b1eb8/attribute/0fac6493-7d53-4f93-bdcb-2353d93e06d3?v=full",
+                                "rel": "full"
+                            }
+                        ],
+                        "resourceVersion": "1.8"
+                    },
+                    {
+                        "display": "Old Patient Identification Number = 2222324",
+                        "uuid": "d3d1f19c-a030-4bfc-bbcc-700cc25f8e11",
+                        "value": "2222324",
+                        "attributeType": {
+                            "uuid": "raxa00000-0000-0000-0000-000000000017",
+                            "display": "Old Patient Identification Number - Old Patient Identification Number",
+                            "links": [
+                                {
+                                    "uri": "NEED-TO-CONFIGURE/ws/rest/v1/personattributetype/raxa00000-0000-0000-0000-000000000017",
+                                    "rel": "self"
+                                }
+                            ]
+                        },
+                        "voided": false,
+                        "links": [
+                            {
+                                "uri": "NEED-TO-CONFIGURE/ws/rest/v1/person/760aa2d7-2084-4fa5-a46e-5225bc1b1eb8/attribute/d3d1f19c-a030-4bfc-bbcc-700cc25f8e11",
+                                "rel": "self"
+                            },
+                            {
+                                "uri": "NEED-TO-CONFIGURE/ws/rest/v1/person/760aa2d7-2084-4fa5-a46e-5225bc1b1eb8/attribute/d3d1f19c-a030-4bfc-bbcc-700cc25f8e11?v=full",
+                                "rel": "full"
+                            }
+                        ],
+                        "resourceVersion": "1.8"
+                    }
+                ],
+                "voided": false,
+                "auditInfo": {
+                    "creator": null,
+                    "dateCreated": null,
+                    "changedBy": null,
+                    "dateChanged": null
+                },
+                "links": [
+                    {
+                        "uri": "NEED-TO-CONFIGURE/ws/rest/v1/person/760aa2d7-2084-4fa5-a46e-5225bc1b1eb8",
+                        "rel": "self"
+                    }
+                ],
+                "resourceVersion": "1.8"
+            },
+            "voided": false,
+            "auditInfo": {
+                "creator": {
+                    "uuid": "44dc673a-2373-4cf4-b2e5-24f7d15e9b69",
+                    "display": "piyushdane - Piyush Dane",
+                    "links": [
+                        {
+                            "uri": "NEED-TO-CONFIGURE/ws/rest/v1/user/44dc673a-2373-4cf4-b2e5-24f7d15e9b69",
+                            "rel": "self"
+                        }
+                    ]
+                },
+                "dateCreated": "2013-07-11T22:08:18.000+0000",
+                "changedBy": {
+                    "uuid": "44dc673a-2373-4cf4-b2e5-24f7d15e9b69",
+                    "display": "piyushdane - Piyush Dane",
+                    "links": [
+                        {
+                            "uri": "NEED-TO-CONFIGURE/ws/rest/v1/user/44dc673a-2373-4cf4-b2e5-24f7d15e9b69",
+                            "rel": "self"
+                        }
+                    ]
+                },
+                "dateChanged": "2013-07-12T08:32:39.000+0000"
+            },
+            "links": [
+                {
+                    "uri": "NEED-TO-CONFIGURE/ws/rest/v1/patient/760aa2d7-2084-4fa5-a46e-5225bc1b1eb8",
+                    "rel": "self"
+                }
+            ],
+            "resourceVersion": "1.8"
+        }
+    ]
+}
